@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <! --- labels for modulation --->
+    <div id="labelbox">
+        <label class="labelcontainer">
+            MODULATOR 1
+        </label>
+        <label class="labelcontainer">
+            LFO (MODULATOR 2)
+        </label>
+        <label class="labelcontainer">
+            MODULATOR 3
+        </label>
+
+    </div>
+
+    <! --- modulation boxes --->
+    <div id="largebox">
+
+        <! --- modulator 1 --->
+        <div id="boxed">
+            <! --- am/off/fm  --->
+            <label class="container">
+                AM
+                <input type="radio" name="mod1type" value="AM">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                OFF
+                <input type="radio" checked="checked" name="mod1type" value="OFF">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                FM
+                <input type="radio" name="mod1type" value="FM">
+                <span class="checkmark"></span>
+            </label>
+
+            <! --- choose waveform --->
+            <div id="shapebox">
+                <label class="shapecontainer">
+                    sine
+                    <input type="radio" checked="checked" name="mod1wavetype" value="sine" />
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    square
+                    <input type="radio" name="mod1wavetype" value="square"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    saw
+                    <input type="radio" name="mod1wavetype" value="sawtooth" />
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    tri
+                    <input type="radio" name="mod1wavetype" value="triangle"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+            </div>
+
+            <! --- frequency and index/depth --->
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Frequency: <span id="mod1freqdisplay"></span> Hz</span>
+                <input type="range" min="0" max="5000" value="0" class="modslider" id="mod1freq">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Index/Depth: <span id="mod1indexdisplay"></span></span>
+                <input type="range" min="-0.5" max="0.5" value="0" step="0.01" class="modslider" id="mod1index">
+            </div>
+        </div>
+
+
+        <! --- LFO  --->
+        <div id="boxed">
+
+            <! --- am/off/fm --->
+            <label class="container">
+                AM
+                <input type="radio" name="LFOmodtype" value="AM">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                OFF
+                <input type="radio" checked="checked" name="LFOmodtype" value="OFF">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                FM
+                <input type="radio" name="LFOmodtype" value="FM">
+                <span class="checkmark"></span>
+            </label>
+
+            <! --- waveform chooser --->
+            <div id="shapebox">
+                <label class="shapecontainer">
+                    sine
+                    <input type="radio" checked="checked" name="LFOwavetype" value="sine"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    square
+                    <input type="radio" name="LFOwavetype" value="square"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    saw
+                    <input type="radio" name="LFOwavetype" value="sawtooth"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    tri
+                    <input type="radio" name="LFOwavetype" value="triangle" />
+                    <span class="shapecheckmark"></span>
+                </label>
+            </div>
+
+            <! --- freq and index/depth --->
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Frequency: <span id="LFOfreqdisplay"></span> Hz</span>
+                <input type="range" min="0" max="20" value="0" step=".1" class="modslider" id="LFOfreq">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Index/Depth: <span id="LFOindexdisplay"></span></span>
+                <input type="range" min="-0.5" max="0.5" value="0" step="0.01" class="modslider" id="LFOindex">
+            </div>
+        </div>
+
+        <! --- mod 3 --->
+        <div id="boxed">
+
+            <! --- am/off/fm --->
+            <label class="container">
+                AM
+                <input type="radio" name="mod3type" value="AM">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                OFF
+                <input type="radio" checked="checked" name="mod3type" value="OFF">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                FM
+                <input type="radio" name="mod3type" value="FM">
+                <span class="checkmark"></span>
+            </label>
+
+            <! --- Waveform chooser --->
+            <div id="shapebox">
+                <label class="shapecontainer">
+                    sine
+                    <input type="radio" checked="checked" name="mod3wavetype" value="sine"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    square
+                    <input type="radio" name="mod3wavetype" value="square"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    saw
+                    <input type="radio" name="mod3wavetype" value="sawtooth"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    tri
+                    <input type="radio" name="mod3wavetype" value="triangle"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+            </div>
+
+            <! --- freq and depth --->
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Frequency: <span id="mod3freqdisplay"></span> Hz</span>
+                <input type="range" min="0" max="5000" value="0" class="modslider" id="mod3freq">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Index/Depth: <span id="mod3indexdisplay"></span></span>
+                <input type="range" min="-0.5" max="0.5" value="0" step="0.01" class="modslider" id="mod3index">
+            </div>
+        </div>
+    </div>
+
+    <! --- lines from mods to oscs --->
+    <div id="linebox">
+        <div id="linecontainer">
+            <div class="vl">
+            </div>
+        </div>
+        <div id="linecontainer">
+            <div class="vl">
+            </div>
+        </div>
+        <div id="linecontainer">
+            <div class="vl">
+            </div>
+        </div>
+    </div>
+
+    <! --- oscillators --->
+    <div id="oscbox">
+
+        <! --- osc1 --->
+        <div id="osccontainer">
+            <label id="label">
+                OSC1
+            </label>
+            <div id="shapebox">
+                <label class="shapecontainer">
+                    sine
+                    <input type="radio" checked="checked" name="osc1wavetype" value="sine"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    square
+                    <input type="radio" name="osc1wavetype" value="square"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    saw
+                    <input type="radio" name="osc1wavetype" value="sawtooth"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    tri
+                    <input type="radio" name="osc1wavetype" value="triangle"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Frequency: * 2 ^ (<span id="osc1freqdisplay"></span>)</span>
+                <input type="range" min="-2.0" max="2.0" value="0" step="0.01" class="oscslider" id="osc1freq">
+            </div>
+        </div>
+        <div id="osccontainer">
+            <label id="label">
+                OSC2
+            </label>
+            <div id="shapebox">
+                <label class="shapecontainer">
+                    sine
+                    <input type="radio" checked="checked" name="osc2wavetype" value="sine"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    square
+                    <input type="radio" name="osc2wavetype" value="square"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    saw
+                    <input type="radio" name="osc2wavetype" value="sawtooth"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    tri
+                    <input type="radio" name="osc2wavetype" value="triangle"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Frequency: * 2 ^ (<span id="osc2freqdisplay"></span>)</span>
+                <input type="range" min="-2.0" max="2.0" value="0" step="0.01" class="oscslider" id="osc2freq">
+            </div>
+        </div>
+        <div id="osccontainer">
+            <label id="label">
+                OSC3
+            </label>
+            <div id="shapebox">
+                <label class="shapecontainer">
+                    sine
+                    <input type="radio" checked="checked" name="osc3wavetype" value="sine"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    square
+                    <input type="radio" name="osc3wavetype" value="square"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    saw
+                    <input type="radio" name="osc3wavetype" value="sawtooth"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+                <label class="shapecontainer">
+                    tri
+                    <input type="radio" name="osc3wavetype" value="triangle"/>
+                    <span class="shapecheckmark"></span>
+                </label>
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Frequency: * 2 (<span id="osc3freqdisplay"></span>)</span>
+                <input type="range" min="-2.0" max="2.0" value="0" step="0.01" class="oscslider" id="osc3freq">
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="miscbox">
+        <input type="checkbox" id="clipping">
+        <span>CLIPPING</span>
+        <div id="mixcontainer">
+            <div id="label">
+                MIXER
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">OSC 1</span>
+                <input type="range" min="0" max="0.25" value="0" step=".005"class="mixslider" id="osc1mix">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">OSC 2</span>
+                <input type="range" min="0" max="0.25" value="0" step=".005"class="mixslider" id="osc2mix">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">OSC 3</span>
+                <input type="range" min="0" max="0.25" value="0" step=".005"class="mixslider" id="osc3mix">
+            </div>
+        </div>
+        <div id="envcontainer">
+            <label id="label">
+                ENVELOPE
+            </label>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Attack</span>
+                <input type="range" min="0" max="1.0" value="0" step="0.01"class="envslider" id="attack">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Decay</span>
+                <input type="range" min="0" max="1.0" value="0" step="0.01"class="envslider" id="decay">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Sustain</span>
+                <input type="range" min="0" max=".99" value="0" step="0.01" class="envslider" id="sustain">
+            </div>
+            <div class="slidecontainer">
+                <span STYLE="font-size:10pt">Release</span>
+                <input type="range" min="0" max="1.0" value="0" step="0.01" class="envslider" id="release">
+            </div>
+        </div>
+        <div id="volcontainer">
+            <label id="label">
+                VOL
+            </label>
+            <div class="slider-wrapper">
+                <input type="range" min="0.0" max="1.0" step="0.01" value="0.5" class = "vslider" id="volume">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"> </script>
+</html>
+  
+  
